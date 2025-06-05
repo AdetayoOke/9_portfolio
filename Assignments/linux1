@@ -1,0 +1,4 @@
+## Linux Beginner Assignment
+
+Create a file directory structure
+    mkdir -p project_alpha/{docs,code,data} # create 3 dir and parent dir project_alpha
