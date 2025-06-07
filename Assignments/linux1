@@ -2,3 +2,34 @@
 
 Create a file directory structure
     mkdir -p project_alpha/{docs,code,data} # create 3 dir and parent dir project_alpha
+
+Create README.txt and add a description
+    echo "Project Alpha is a software development project focused on building robust application." > project_alpha/docs/README.txt
+
+Create an empty script file app.sh in code/
+    touch project_alpha/code/app.sh
+
+Create an empty data.txt in data/
+    touch project_alpha/data/data.txt
+
+User and Group Management 
+Create a new group called developers
+    sudo groupadd developers
+
+Create users alice and bob
+    sudo useradd -m alice
+    sudo useradd -m bob
+
+Set Permissions
+Set project_alpha/ permissions (only developers group can read, write, execute)
+    sudo chom $(whoami) :developers project_alpha
+    chmod 070
+
+Set docs/ readable by evertone
+    chmod 444 project_alpha/docs
+
+Set code/ readable and writable by owner and group only
+    chmod 660 project_alpha/code
+
+Set data/ private to owner only
+    chmod 700 project_alpha/data
